@@ -68,32 +68,42 @@ class _InputPageState extends State<InputPage> {
                     "Height",
                     style: labelTextStyle,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
-                    children: <Widget>[
-                      Text(
-                        height.toString(),
-                        style: KnumberTextStyle,
-                      ),
-                      Text(
-                        'cm',
-                        style: labelTextStyle,
-                      )
-                    ],
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: <Widget>[
+                        Text(
+                          height.toString(),
+                          style: KnumberTextStyle,
+                        ),
+                        Text(
+                          'cm',
+                          style: labelTextStyle,
+                        )
+                      ],
+                    ),
                   ),
-                  Slider(
-                    value: height.toDouble(),
-                    max: 220,
-                    min: 120,
-                    activeColor: Color(0xFFEB1555),
-                    inactiveColor: Color(0xFF8D8E98),
-                    onChanged: (double newValue) {
-                      setState(() {
-                        height = newValue.round();
-                      });
-                    },
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Colors.white,
+                      thumbColor: Color(0xFFEB1555),
+                      overlayColor: Color(0x29EB1555),
+                      thumbShape: RoundSliderThumbShape(enabledThumbRadius: 15),
+                      overlayShape: RoundSliderOverlayShape(overlayRadius: 30),
+                    ),
+                    child: Slider(
+                      value: height.toDouble(),
+                      max: 220,
+                      min: 120,
+                      inactiveColor: Color(0xFF8D8E98),
+                      onChanged: (double newValue) {
+                        setState(() {
+                          height = newValue.round();
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
