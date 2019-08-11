@@ -10,3 +10,14 @@ const KnumberTextStyle = TextStyle(
   fontSize: 50,
   fontWeight: FontWeight.w900,
 );
+
+const KbuttonText = TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+
+const KtitleStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.bold);
+
+const KresultStyle = TextStyle(
+    color: Color(0xFF24D876), fontSize: 22, fontWeight: FontWeight.bold);
+
+const KBMIText = TextStyle(fontWeight: FontWeight.bold, fontSize: 100);
+
+const KBodyText = TextStyle(fontSize: 22);
